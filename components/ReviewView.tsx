@@ -34,7 +34,8 @@ export function ReviewView() {
               <StillFrame
                 src={item.file}
                 fileName={item.fileName}
-                box={decision === "pending" ? item.box : item.box}
+                ratio={item.ratio ?? "wide"}
+                box={item.box}
                 label={item.label}
               />
               <div>

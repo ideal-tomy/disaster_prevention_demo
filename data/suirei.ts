@@ -396,7 +396,7 @@ export const INCIDENT = {
       label: "車両 白バン",
       caption: "白バンが搬入口をふさいでいる",
       note: "運転者もナンバーも見ていない",
-      box: { left: 28, top: 34, width: 38, height: 42 }
+      box: { left: 24, top: 37, width: 28, height: 34 }
     },
     {
       id: "b2",
@@ -409,7 +409,7 @@ export const INCIDENT = {
       label: "人物 8名",
       caption: "入口に8人いる",
       note: "個人は分からない。開設前に人が来ている",
-      box: { left: 36, top: 42, width: 34, height: 28 }
+      box: { left: 18, top: 41, width: 30, height: 16 }
     },
     {
       id: "b3",
@@ -422,7 +422,7 @@ export const INCIDENT = {
       label: "備品",
       caption: "非常口の前に備品がある",
       note: "2026/09/09 の「対応が必要」と同じ場所",
-      box: { left: 32, top: 38, width: 36, height: 36 }
+      box: { left: 24, top: 53, width: 27, height: 27 }
     }
   ],
   records: [
@@ -450,6 +450,7 @@ export type ReviewItem = {
   knowledge: string;
   label?: string;
   box?: { left: number; top: number; width: number; height: number };
+  ratio?: "wide" | "photo";
   initial: ReviewDecision;
   decidedNote?: string;
 };
@@ -463,6 +464,7 @@ export const REVIEW_ITEMS: ReviewItem[] = [
     file: "/img/c1.png",
     fileName: "c1.png",
     knowledge: "K-F4",
+    ratio: "photo",
     initial: "needed",
     decidedNote: "対応が必要（2026/09/09 高木）"
   },
@@ -476,7 +478,7 @@ export const REVIEW_ITEMS: ReviewItem[] = [
     knowledge: "K-D3",
     label: "車両 白バン",
     initial: "pending",
-    box: { left: 28, top: 34, width: 38, height: 42 }
+    box: { left: 24, top: 37, width: 28, height: 34 }
   },
   {
     id: "extinguisher",
@@ -486,7 +488,10 @@ export const REVIEW_ITEMS: ReviewItem[] = [
     file: "/img/c2.png",
     fileName: "c2.png",
     knowledge: "K-F2",
-    initial: "pending"
+    label: "消火器",
+    ratio: "photo",
+    initial: "pending",
+    box: { left: 49, top: 44, width: 20, height: 38 }
   }
 ];
 
