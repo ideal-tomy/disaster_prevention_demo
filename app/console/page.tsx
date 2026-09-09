@@ -4,40 +4,21 @@ import { DASHBOARD, FACILITIES, formatCapacity, INCIDENT } from "@/data/suirei";
 
 export default function DashboardPage() {
   return (
-    <section>
+    <section className="dash">
       <div className="pageHead">
         <h2>統合ダッシュボード</h2>
         <p>開設できる場所と、記録がない場所</p>
       </div>
-      <div className="statGrid">
-        <article className="card">
-          <label>使える</label>
-          <div className="figure">{DASHBOARD.usableShelters}</div>
-          <p className="hint">収容 {formatCapacity(DASHBOARD.usableCapacity)}</p>
-        </article>
-        <article className="card">
-          <label>条件付き</label>
-          <div className="figure">{DASHBOARD.conditional}</div>
-          <p className="hint">開設数に入れない</p>
-        </article>
-        <article className="card">
-          <label>使えない</label>
-          <div className="figure">{DASHBOARD.unusable}</div>
-          <p className="hint">桜小学校体育館・東公民館</p>
-        </article>
-        <article className="card">
-          <label>確認できていない</label>
-          <div className="figure">{DASHBOARD.unknown}</div>
-          <p className="hint">記録がない</p>
-        </article>
-      </div>
 
       <article className="incidentBanner">
+        <img className="bannerStill" src="/img/b1.png" alt="" />
         <div>
           <div className="kicker">
             <span className="num">{INCIDENT.id}</span>
             <StatusPill kind={INCIDENT.judgment} />
-            <span className="pill pillAi">相関 {INCIDENT.confidence}%</span>
+            <span className="pill pillAi" title={INCIDENT.confidenceNote}>
+              関連付け {INCIDENT.confidence}%
+            </span>
           </div>
           <h3>{INCIDENT.headline}</h3>
           <p className="meta">
@@ -48,6 +29,41 @@ export default function DashboardPage() {
           詳細
         </Link>
       </article>
+
+      <div className="statGrid">
+        <Link href="/console/facilities?view=shelter&status=usable" className="card statLink">
+          <label>使える</label>
+          <div className="figure">
+            {DASHBOARD.usableShelters}
+            <small>施設</small>
+          </div>
+          <p className="hint">収容 {formatCapacity(DASHBOARD.usableCapacity)}</p>
+        </Link>
+        <Link href="/console/facilities?view=shelter&status=conditional" className="card statLink">
+          <label>条件付き</label>
+          <div className="figure">
+            {DASHBOARD.conditional}
+            <small>施設</small>
+          </div>
+          <p className="hint">開設数に入れない</p>
+        </Link>
+        <Link href="/console/facilities?view=shelter&status=unusable" className="card statLink">
+          <label>使えない</label>
+          <div className="figure">
+            {DASHBOARD.unusable}
+            <small>施設</small>
+          </div>
+          <p className="hint">桜小学校体育館・東公民館</p>
+        </Link>
+        <Link href="/console/facilities?view=shelter&status=unknown" className="card statLink">
+          <label>確認できていない</label>
+          <div className="figure">
+            {DASHBOARD.unknown}
+            <small>施設</small>
+          </div>
+          <p className="hint">記録がない</p>
+        </Link>
+      </div>
 
       <div className="split">
         <article className="card mapCard">
@@ -66,6 +82,9 @@ export default function DashboardPage() {
             <text x="50" y="90" textAnchor="middle" fontSize="3.2" fill="#5e6a78">
               南
             </text>
+            <text x="50" y="52" textAnchor="middle" fontSize="3" fill="#8b93a0">
+              中央
+            </text>
             {FACILITIES.filter((f) => f.shelter).map((facility) => {
               const color =
                 facility.judgment === "usable"
@@ -75,27 +94,47 @@ export default function DashboardPage() {
                     : facility.judgment === "unusable"
                       ? "#b42318"
                       : "#8b93a0";
-              const href = facility.id === "F01" ? "/console/incident" : "/console/facilities?view=shelter";
+              const href =
+                facility.id === "F01"
+                  ? "/console/incident"
+                  : `/console/facilities?view=shelter&facility=${facility.id}`;
               return (
                 <a key={facility.id} href={href}>
                   <circle
                     cx={facility.map.x}
                     cy={facility.map.y}
-                    r="1.8"
+                    r={facility.id === "F01" ? 2.4 : 1.8}
                     fill={facility.judgment === "unknown" ? "none" : color}
                     stroke={color}
                     strokeDasharray={facility.judgment === "unknown" ? "1.2 0.8" : undefined}
                     strokeWidth="0.6"
                   />
+                  {facility.id === "F01" ? (
+                    <text x={facility.map.x} y={facility.map.y - 3.6} textAnchor="middle" fontSize="3.2" fill="#1c2430">
+                      総合体育館
+                    </text>
+                  ) : null}
                 </a>
               );
             })}
           </svg>
           <div className="mapLegend">
-            <span>使える</span>
-            <span>条件付きで使える</span>
-            <span>使えない</span>
-            <span>確認できていない（破線）</span>
+            <span>
+              <i className="legDot" style={{ background: "#1f7a4d" }} />
+              使える
+            </span>
+            <span>
+              <i className="legDot" style={{ background: "#c47b12" }} />
+              条件付きで使える
+            </span>
+            <span>
+              <i className="legDot" style={{ background: "#b42318" }} />
+              使えない
+            </span>
+            <span>
+              <i className="legDot legDash" />
+              確認できていない
+            </span>
           </div>
         </article>
         <article className="card">

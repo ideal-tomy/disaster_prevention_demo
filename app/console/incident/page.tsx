@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { StatusPill } from "@/components/StatusPill";
 import { StillFrame } from "@/components/StillFrame";
 import { INCIDENT } from "@/data/suirei";
@@ -63,7 +64,11 @@ export default function IncidentPage() {
             <label>推奨アクション</label>
             <ol className="actions">
               {INCIDENT.actions.map((action) => (
-                <li key={action}>{action}</li>
+                <li key={action.href}>
+                  <Link className="linkish" href={action.href}>
+                    {action.text}
+                  </Link>
+                </li>
               ))}
             </ol>
             <p>

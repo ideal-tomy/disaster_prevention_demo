@@ -57,7 +57,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/08/14 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 50, y: 16 }
   },
   {
@@ -72,7 +72,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/08/11 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 52, y: 72 }
   },
   {
@@ -87,7 +87,7 @@ export const FACILITIES: Facility[] = [
     judgment: "unusable",
     shelter: true,
     reason: "外壁の剥離（2026/06/03）",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "剥離", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "剥離", door: "記録" },
     map: { x: 74, y: 40 }
   },
   {
@@ -102,7 +102,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/09/01 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 26, y: 40 }
   },
   {
@@ -117,7 +117,7 @@ export const FACILITIES: Facility[] = [
     judgment: "conditional",
     shelter: true,
     reason: "消火器の位置",
-    cells: { fire: "位置", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "位置", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 46, y: 48 }
   },
   {
@@ -147,7 +147,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/07/29 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 64, y: 80 }
   },
   {
@@ -162,7 +162,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/08/25 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 38, y: 62 }
   },
   {
@@ -192,7 +192,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/09/04 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 58, y: 64 }
   },
   {
@@ -207,7 +207,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/09/03 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 42, y: 24 }
   },
   {
@@ -222,7 +222,7 @@ export const FACILITIES: Facility[] = [
     judgment: "conditional",
     shelter: true,
     reason: "受水槽 残留塩素",
-    cells: { fire: "済", gen: "済", tank: "下限近", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "下限近", wall: "記録", door: "記録" },
     map: { x: 60, y: 74 }
   },
   {
@@ -237,7 +237,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: false,
     reason: "指定避難所ではない",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 50, y: 50 }
   },
   {
@@ -252,7 +252,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/09/02 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 48, y: 84 }
   },
   {
@@ -267,7 +267,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/08/19 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 78, y: 52 }
   },
   {
@@ -282,7 +282,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/08/21 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 20, y: 54 }
   },
   {
@@ -297,7 +297,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/09/04 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 40, y: 56 }
   },
   {
@@ -312,7 +312,7 @@ export const FACILITIES: Facility[] = [
     judgment: "conditional",
     shelter: true,
     reason: "受水槽 水位",
-    cells: { fire: "済", gen: "済", tank: "下限近", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "下限近", wall: "記録", door: "記録" },
     map: { x: 28, y: 70 }
   },
   {
@@ -327,7 +327,7 @@ export const FACILITIES: Facility[] = [
     judgment: "unusable",
     shelter: true,
     reason: "外壁のひび · 扉",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "ひび", door: "隙間" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "ひび", door: "隙間" },
     map: { x: 32, y: 86 }
   },
   {
@@ -357,7 +357,7 @@ export const FACILITIES: Facility[] = [
     judgment: "usable",
     shelter: true,
     reason: "2026/09/08 点検済み",
-    cells: { fire: "済", gen: "済", tank: "記録", wall: "済", door: "済" },
+    cells: { fire: "記録", gen: "記録", tank: "記録", wall: "記録", door: "記録" },
     map: { x: 56, y: 18 }
   }
 ];
@@ -430,10 +430,22 @@ export const INCIDENT = {
     "2026/09/09 高木が画像確認で「対応が必要」。非常口前の備品（K-F4）"
   ],
   actions: [
-    "受付予定と、体育館入口に来ている人の数を照合する（予約台帳は未接続）",
-    "東側搬入口の車両をどかせるか、体育施設係に確認する",
-    "非常口前の備品をどかす（2026/09/09 の「対応が必要」が未了）",
-    "発電機の業者紙を見て、今夜の電源を別施設にするか決める。第一の代替は北中学校体育館（点検 2026/09/08、使える、収容 480）"
+    {
+      text: "受付予定と、体育館入口に来ている人の数を照合する（予約台帳は未接続）",
+      href: "/console/integrations"
+    },
+    {
+      text: "東側搬入口の車両をどかせるか、体育施設係に確認する",
+      href: "/console/review"
+    },
+    {
+      text: "非常口前の備品をどかす（2026/09/09 の「対応が必要」が未了）",
+      href: "/console/review"
+    },
+    {
+      text: "発電機の業者紙を見て、今夜の電源を別施設にするか決める。第一の代替は北中学校体育館（点検 2026/09/08、使える、収容 480）",
+      href: "/console/facilities?view=shelter&facility=F09"
+    }
   ],
   nodes: ["搬入口", "体育館入口", "非常口", "点検記録"]
 } as const;

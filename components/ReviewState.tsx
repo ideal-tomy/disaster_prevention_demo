@@ -8,6 +8,7 @@ type Ctx = {
   setDecision: (id: string, value: Exclude<ReviewDecision, "pending">) => void;
   pendingCount: number;
   order: typeof REVIEW_ITEMS;
+  confirmer: string;
 };
 
 const ReviewContext = createContext<Ctx | null>(null);
@@ -22,6 +23,7 @@ export function ReviewProvider({ children }: { children: React.ReactNode }) {
   };
 
   const pendingCount = Object.values(decisions).filter((v) => v === "pending").length;
+  const confirmer = decisions.van !== "pending" ? "高木（総務）" : "未確定。高木が押すまで空欄";
 
   const order = useMemo(() => {
     const byId = Object.fromEntries(REVIEW_ITEMS.map((item) => [item.id, item]));
@@ -31,7 +33,7 @@ export function ReviewProvider({ children }: { children: React.ReactNode }) {
   }, [decisions.van]);
 
   return (
-    <ReviewContext.Provider value={{ decisions, setDecision, pendingCount, order }}>
+    <ReviewContext.Provider value={{ decisions, setDecision, pendingCount, order, confirmer }}>
       {children}
     </ReviewContext.Provider>
   );
@@ -39,6 +41,6 @@ export function ReviewProvider({ children }: { children: React.ReactNode }) {
 
 export function useReview() {
   const ctx = useContext(ReviewContext);
-  if (!ctx) throw new Error("ReviewProvider が必要です");
+  if (!ctx) throw new Error("useReview");
   return ctx;
 }

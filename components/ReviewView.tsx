@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { StillFrame } from "@/components/StillFrame";
 import { useReview } from "@/components/ReviewState";
 import type { ReviewDecision } from "@/data/suirei";
@@ -45,16 +46,31 @@ export function ReviewView() {
                 {item.label ? <p style={{ margin: "0 0 6px" }}>{item.label}</p> : null}
                 <p style={{ margin: 0 }}>{statusText(item.id, decision, item.decidedNote)}</p>
                 <p style={{ color: "var(--muted)", fontSize: 13 }}>ナレッジ {item.knowledge}</p>
-                {decision === "pending" ? (
-                  <div className="btnRow">
-                    <button type="button" className="btn btnPrimary" onClick={() => setDecision(item.id, "needed")}>
-                      対応が必要
-                    </button>
-                    <button type="button" className="btn btnGhost" onClick={() => setDecision(item.id, "ok")}>
-                      問題なし
-                    </button>
-                  </div>
+                {item.id === "van" ? (
+                  <p>
+                    <Link className="linkish" href="/console/documents">
+                      記録
+                    </Link>
+                  </p>
                 ) : null}
+                <div className="btnRow">
+                  <button
+                    type="button"
+                    className="btn btnPrimary"
+                    aria-pressed={decision === "needed"}
+                    onClick={() => setDecision(item.id, "needed")}
+                  >
+                    対応が必要
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btnGhost"
+                    aria-pressed={decision === "ok"}
+                    onClick={() => setDecision(item.id, "ok")}
+                  >
+                    問題なし
+                  </button>
+                </div>
               </div>
             </article>
           );
